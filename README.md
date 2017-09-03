@@ -36,5 +36,6 @@ SDK
 - Para testar as funcionalidades do projeto acessar http://localhost:8080/swagger/ 
 
 4. REFERENCIAS
+
 https://azure.microsoft.com/pt-br/services/service-fabric/
 
