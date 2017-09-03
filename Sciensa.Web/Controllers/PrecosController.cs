@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using Sciensa.Web.Models;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -17,16 +19,12 @@ namespace Sciensa.Web.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get(int codigo)
+        public async Task<IActionResult> Get(string codigo)
         {
-            string proxyUrl = $"{servico}//Api/v2/Quote/json?symbol=" + codigo;
+            string proxyUrl = $"{servico}/Api/v2/Quote/json?symbol=" + codigo;
             HttpResponseMessage response = await httpClient.GetAsync(proxyUrl);
 
-            return new ContentResult()
-            {
-                StatusCode = (int)response.StatusCode,
-                Content = await response.Content.ReadAsStringAsync()
-            };
+            return Json(JsonConvert.DeserializeObject<Preco>(await response.Content.ReadAsStringAsync()));            
         }
     }
 }

@@ -10,8 +10,8 @@ namespace Sciensa.Web.Controllers
     {
         public IActionResult Index()
         {
-            //return View();
-           return Redirect("/swagger");
+            return View();
+           //return Redirect("/swagger");
         }
 
         public IActionResult About()

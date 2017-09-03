@@ -1,4 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using Sciensa.Web.Models;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -27,11 +30,11 @@ namespace Sciensa.Web.Controllers
             string proxyUrl = $"{servico}/Api/v2/Lookup/json?input=" + codigo;
             HttpResponseMessage response = await httpClient.GetAsync(proxyUrl);
 
-            return new ContentResult()
-            {
-                StatusCode = (int)response.StatusCode,
-                Content = await response.Content.ReadAsStringAsync()
-            };
+            var retorno = await response.Content.ReadAsStringAsync();
+
+
+            return Json(JsonConvert.DeserializeObject<List<Empresa>>(retorno));
+            
         }
 
     }

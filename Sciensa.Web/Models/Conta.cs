@@ -8,8 +8,8 @@ namespace Sciensa.Web.Models
     public class Conta
     {
         public int ContaID { get; set; }
-        public string Agencia { get; set; }
-        public string NumeroConta { get; set; }
+        public int Agencia { get; set; }
+        public int NumeroConta { get; set; }
         public int TipoConta { get; set; }
         public int ClienteID { get; set; }
         public double Saldo { get; set; }
