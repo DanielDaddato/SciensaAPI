@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 namespace Sciensa.Web.Controllers
 {
     [Produces("application/json")]
-    [Route("api/banco/mercado/pesquisa")]
+    [Route("api/banco/mercado/preco")]
     public class PrecosController : Controller
     {
         private readonly HttpClient httpClient;
