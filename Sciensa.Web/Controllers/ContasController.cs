@@ -1,12 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using System.Net.Http;
 using Newtonsoft.Json;
 using Sciensa.Web.Models;
-using System.Text;
+using System.Collections.Generic;
+using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Sciensa.Web.Controllers
 {
@@ -19,6 +18,7 @@ namespace Sciensa.Web.Controllers
         string servico = "http://localhost:19081/SciensaAPI/Sciensa.API/api/ContasData";
         string tipo = "Int64Range";
         string chave = "0";
+
         public ContasController(HttpClient httpClient)
         {
             _httpClient = httpClient;

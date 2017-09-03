@@ -1,15 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading;
-using Microsoft.ServiceFabric.Data.Collections;
 using Microsoft.ServiceFabric.Data;
+using Microsoft.ServiceFabric.Data.Collections;
 using Sciensa.API.Models;
-using Newtonsoft.Json;
-using System.Net.Http;
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Sciensa.API.Controllers
 {
@@ -23,6 +18,7 @@ namespace Sciensa.API.Controllers
         {
             this.stateManager = stateManager;
         }
+
         // GET: api/ClientesData
         [HttpGet]
         public async Task<IActionResult> Get(int clienteid)

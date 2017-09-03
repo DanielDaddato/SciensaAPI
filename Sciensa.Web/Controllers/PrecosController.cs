@@ -14,14 +14,12 @@ namespace Sciensa.Web.Controllers
         public PrecosController(HttpClient httpClient)
         {
             this.httpClient = httpClient;
-
         }
 
         [HttpGet]
         public async Task<IActionResult> Get(int codigo)
         {
             string proxyUrl = $"{servico}//Api/v2/Quote/json?symbol=" + codigo;
-
             HttpResponseMessage response = await httpClient.GetAsync(proxyUrl);
 
             return new ContentResult()

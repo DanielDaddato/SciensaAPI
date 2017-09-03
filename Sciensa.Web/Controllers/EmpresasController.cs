@@ -18,10 +18,8 @@ namespace Sciensa.Web.Controllers
 
         [HttpGet]
         public async Task<IActionResult> Get(string codigo)
-        {
-            
+        {            
             string proxyUrl = $"{servico}/Api/v2/Lookup/json?input=" + codigo;
-
             HttpResponseMessage response = await httpClient.GetAsync(proxyUrl);
 
             return new ContentResult()
@@ -31,22 +29,5 @@ namespace Sciensa.Web.Controllers
             };
         }
 
-        // POST: api/Empresas
-        [HttpPost]
-        public void Post([FromBody]string value)
-        {
-        }
-        
-        // PUT: api/Empresas/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-        
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }

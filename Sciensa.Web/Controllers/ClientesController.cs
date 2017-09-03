@@ -1,17 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Net.Http;
 using Newtonsoft.Json;
 using Sciensa.Web.Models;
-using System.Threading;
-using Microsoft.ServiceFabric.Data.Collections;
-using Microsoft.ServiceFabric.Data;
-using System.Text;
+using System.Collections.Generic;
+using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Sciensa.Web.Controllers
 {
@@ -27,6 +21,7 @@ namespace Sciensa.Web.Controllers
         {
             _httpClient = httpClient;
         }
+
         // GET: api/Clientes
         [HttpGet]
         public async Task<IActionResult> Get()
@@ -37,8 +32,6 @@ namespace Sciensa.Web.Controllers
 
             return Json(clientes);
         }
-
-
 
         // POST: api/Clientes
         [HttpPost("{*cliente}")]
@@ -58,7 +51,6 @@ namespace Sciensa.Web.Controllers
                 Content = await response.Content.ReadAsStringAsync()
             };
         }
-        
-        
+               
     }
 }
