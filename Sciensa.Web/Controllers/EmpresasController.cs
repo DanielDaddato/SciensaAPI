@@ -16,6 +16,11 @@ namespace Sciensa.Web.Controllers
             this.httpClient = httpClient;
         }
 
+        /// <summary>
+        /// Lista as empresas listadas no mercado de ações 
+        /// </summary>
+        /// <param name="codigo"></param>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> Get(string codigo)
         {            

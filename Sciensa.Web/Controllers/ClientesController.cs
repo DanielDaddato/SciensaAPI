@@ -21,7 +21,10 @@ namespace Sciensa.Web.Controllers
         {
             _httpClient = httpClient;
         }
-
+        /// <summary>
+        /// Busca todos os clientes
+        /// </summary>
+        /// <returns></returns>
         // GET: api/Clientes
         [HttpGet]
         public async Task<IActionResult> Get()
@@ -32,9 +35,13 @@ namespace Sciensa.Web.Controllers
 
             return Json(clientes);
         }
-
+        /// <summary>
+        /// Insere um cliente
+        /// </summary>
+        /// <param name="cliente"></param>
+        /// <returns></returns>
         // POST: api/Clientes
-        [HttpPost("{*cliente}")]
+        [HttpPost]
         public async Task<IActionResult> Post([FromBody]Cliente cliente)
         {
             string payload = JsonConvert.SerializeObject(cliente);

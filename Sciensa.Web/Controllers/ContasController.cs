@@ -24,6 +24,11 @@ namespace Sciensa.Web.Controllers
             _httpClient = httpClient;
         }
 
+        /// <summary>
+        /// busca as contas de um cliente
+        /// </summary>
+        /// <param name="clienteID"></param>
+        /// <returns></returns>
         [HttpGet("{clienteID}")]
         public async Task<IActionResult> Get(int clienteID)
         {
@@ -36,7 +41,12 @@ namespace Sciensa.Web.Controllers
             return Json(contas);
         }
 
-        [HttpPost("{*conta}")]
+        /// <summary>
+        /// Insere uma conta
+        /// </summary>
+        /// <param name="conta"></param>
+        /// <returns></returns>
+        [HttpPost]
         public async Task<IActionResult> Post([FromBody]Conta conta)
         {
             string payload = JsonConvert.SerializeObject(conta);
@@ -53,7 +63,12 @@ namespace Sciensa.Web.Controllers
             };
         }
 
-        [HttpPut("{*conta}")]
+        /// <summary>
+        /// Edita uma conta
+        /// </summary>
+        /// <param name="conta"></param>
+        /// <returns></returns>
+        [HttpPut]
         public async Task<IActionResult> Put([FromBody]Conta conta)
         {
             string payload = JsonConvert.SerializeObject(conta);

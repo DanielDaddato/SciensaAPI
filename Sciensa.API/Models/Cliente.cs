@@ -9,7 +9,7 @@ namespace Sciensa.API.Models
     {
         public int ClienteID { get; set; }
         public string Nome { get; set; }
-        public string CPF { get; set; }
+        public int CPF { get; set; }
         public string Endereco { get; set; }
     }
 }
